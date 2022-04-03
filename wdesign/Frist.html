@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UNDERG
+        <script src="https://fastly.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"
+            integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            background-color: #ffffff;
+        }
+
+        .backg {
+            position: absolute;
+            top: 70px;
+            right: 140px;
+            z-index: 4;
+            width: 600px;
+            height: 600px;
+            background-image: url(Picture2.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        .fixbox1 {
+            position: fixed;
+            bottom: 120px;
+            right: 5px;
+            width: 227px;
+            height: 47.5px;
+            padding-left: 15px;
+            line-height: 47.5px;
+            background-color: rgba(255, 255, 0, 0.762);
+        }
+
+        .fixbox2 {
+            position: fixed;
+            bottom: 50px;
+            right: 5px;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 0, 0.762);
+        }
+
+        .headernav {
+            position: sticky;
+            top: 0;
+            height: 80px;
+            z-index: 5;
+            background-color: #ffffff;
+        }
+
+        .header .headera {
+            padding: 10px 20px 0px 40px;
+            margin: 0px;
+            line-height: 50px;
+            font-size: 50px;
+            color: #587d55;
+            font-family: Monospace;
+        }
+
+        .nav1 li a {
+            line-height: 80px;
+            display: inline-block;
+            padding: 0px 50px 0px 40px;
+            font-size: 16px;
+        }
+
+
+        .nav2 div button {
+            line-height: 80px;
+            display: inline-block;
+            padding: 0px 50px 0px 50px;
+        }
+
+        .nav3 li a {
+            line-height: 80px;
+            display: inline-block;
+            padding: 0px 10px 0px 50px;
+        }
+
+
+        .banner {
+            /* background: url("images/hello.jpg") no-repeat center; */
+            width: 1140px;
+            margin: 0px auto;
+            height: 200px;
+        }
+
+        .hello {
+            text-align: left;
+            color: #656b97;
+            margin-top: 100px;
+            line-height: 50px;
+            font-size: 50px;
+            font-family: "Roboto", inherit;
+            font-weight: 900;
+        }
+
+        .what {
+            color: silver;
+            line-height: 40px;
+            font-size: 30px;
+            text-align: left;
+        }
+
+        .twig {
+            padding: 0px 0 20px 0;
+        }
+
+        .twig1 {
+            height: 211px;
+            width: 530px;
+            margin: 30px 0px 20px 150px;
+            border-top: 3px solid #979f71;
+            border-bottom: 1px solid #9cad89;
+            background-color: #909c4fc9;
+            border-radius: 15px;
+        }
+
+        .tleft {
+            float: left;
+            width: 200px;
+            height: 207px;
+            background-color: #30454298;
+            border-radius: 15px 0 0 15px;
+        }
+
+        .twig1 .tleft ul li {
+            width: 210px;
+            float: left;
+            list-style: none;
+            padding: 0 30px;
+        }
+
+        .twig1 ul li a {
+            /* border-right: 1px solid #fefffa; */
+            line-height: 60px;
+            font-size: 20px;
+            text-decoration: none;
+            color: antiquewhite;
+            height: 60px;
+        }
+
+        .twig1 ul li a:hover {
+            border-bottom: 2px solid rgba(40, 164, 164, 0.784);
+            color: rgba(40, 164, 164, 0.784);
+        }
+
+        .twig1 ul li span {
+            float: right;
+            line-height: 60px;
+            font-size: 20px;
+            color: antiquewhite;
+            height: 60px;
+        }
+
+        .box1 {
+            height: 400px;
+            width: 1140px;
+            margin: 10px auto;
+        }
+
+        .box1a {
+            float: left;
+            width: 240px;
+            height: 300px;
+            background-color: ghostwhite;
+            margin-right: 45px;
+        }
+
+        .box1a img {
+            width: 160px;
+            margin: 10px 0px 30px 40px;
+        }
+
+        .twig2 {
+            display: inline-block;
+            height: 211px;
+            width: 530px;
+            margin: 10px 0px 30px 150px;
+            border-top: 3px solid #979f71;
+            border-bottom: 1px solid #9cad89;
+            border-radius: 15px;
+        }
+
+        .pp {
+            color: #656b97;
+            height: 140px;
+            padding: 0 30px;
+            margin-top: 40px;
+            font-size: 16px;
+        }
+
+        .doneline {
+            padding: 0 30px;
+            font-size: 12px;
+            color: silver;
+        }
+
+        .leastline {
+            padding: 0 30px;
+            margin-top: 5px;
+        }
+
+        .leastline h4 {
+            font: normal bold 12px Arial;
+            display: inline-block;
+        }
+
+        .leastline em {
+            font-style: normal;
+            color: silver;
+            margin: 0 12px 0 6px;
+        }
+
+        span {
+            color: #a13c56;
+            font: normal bold 12px Arial;
+        }
+
+        .family {
+            width: 1140px;
+        }
+
+        .hugescreen {
+            width: 1140px;
+            margin: 0px auto;
+        }
+
+        .box2 {
+            width: 1140px;
+            margin: 0 auto;
+            padding: 10px 0;
+        }
+
+        .box3 {
+            margin: 20px auto;
+            height: 300px;
+        }
+
+
+        #footer {
+            height: 200px;
+            padding: 30px 40px;
+            background: #fcfdf8;
+            border-top: 3px solid #EFEFEF;
+            margin-top: 100px;
+        }
+
+        .comment {
+            width: 1140px;
+            margin: 30px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="fixbox1">Hey!👋 Do you need any help?</div>
+        <div class="fixbox2">fly~~~</div>
+    </div>
+
+    <nav class="navbar navbar-default headernav">
+        <div class="container-fluid">
+            <div class="navbar-header header">
+                <a class="navbar-brand headera" href="#">
+                    <srtong>UNIVG</srtong>
+                </a>
+            </div>
+
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav nav1">
+                    <li><a href="#" style="color:darkolivegreen;padding: 0px 20px 0px 80px;">Official
+                            &nbsp;&nbsp;Information</a></li>
+                    <li><a href="#" style="color:darkolivegreen;padding: 0px 20px 0px 40px;">Recent
+                            &nbsp;&nbsp;Events</a></li>
+                    <li><a href="#" style="color:darkolivegreen;">BLOG</a></li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            Dropdown <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            ...
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- <form class="navbar-form navbar-left nav2">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form> -->
+                <ul class="nav navbar-nav navbar-right nav3">
+                    <li><a href="../web 模版/模版9 personal/index.html" target="_blank" style="color:darkkhaki;">Link</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false" style="color:darkkhaki;">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="banner">
+        <h1 class="hello">HELLO!</h1>
+        <h1 class="hello" style="margin:0px">WHAT ARE U LOOKING</h1>
+        <h2 class="what">HELLO!WIINE THE POOH!</h2>
+    </div>
+
+    <div class="backg"></div>
+
+    <div class="twig">
+        <div class="twig1">
+            <div class="tleft">
+                <ul>
+                    <li><a href="#">TIGER</a><span>></span></li>
+                    <li><a href="#">POOH</a><span>></span></li>
+                    <li><a href="#">EEYORE</a><span>></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="twig2" style="background-color: #656b97d0;">
+        <div class=" twig2.1"></div>
+    </div>
+
+    <div class="twig2" style="margin-left: 30px;background-color:#ab49629f;">
+        <div class="twig2.1"></div>
+    </div>
+
+    <br><br><br><br><br>
+
+
+    <div class="box2">
+        <h1>WHAT'S NEWS</h1>
+    </div>
+
+    <div class="box1">
+        <div class="box1a">
+            <img src="Picture10.png" width=100% />
+            <!-- <p class="pp">跳跳虎！<br>偷吃蜂蜜实录!<br>呼叫维尼！！！</p> -->
+            <div class="doneline">Winnie the Pooh and the Bluster Day</div>
+            <div class="leastline">
+                <h4 style="color:#202520">hoo hoo hoo hoo</h4>
+                <em>|</em>
+                <span> 小虎侦探</span>
+            </div>
+        </div>
+
+        <div class="box1a">
+            <img src="Picture9.png" width=40px />
+            <!-- <p class="pp">维尼维尼！<br>偷吃蜂蜜实录!<br>呼叫维尼！！！</p> -->
+            <div class="doneline">Winnie the Pooh and the Bluster Day</div>
+            <div class="leastline">
+                <h4 style="color:#202520">hoo hoo hoo hoo</h4>
+                <em>|</em>
+                <span> 小虎侦探</span>
+            </div>
+        </div>
+        <div class="box1a">
+            <img src="Picture8.png" width=100% />
+            <!-- <p class="pp">Eeyore！<br>偷吃蜂蜜实录!<br>呼叫维尼！！！</p> -->
+            <div class="doneline">Winnie the Pooh and the Bluster Day</div>
+            <div class="leastline">
+                <h4 style="color:#202520">hoo hoo hoo hoo</h4>
+                <em>|</em>
+                <span> 小虎侦探</span>
+            </div>
+        </div>
+        <div class="box1a" style="margin-right:0">
+            <img src="Picture12.png" width=100% />
+            <!-- <p class="pp">小猪皮杰！<br>偷吃蜂蜜实录!<br>呼叫维尼！！！</p> -->
+            <div class="doneline">Winnie the Pooh and the Bluster Day</div>
+            <div class="leastline">
+                <h4 style="color:#202520">hoo hoo hoo hoo</h4>
+                <em>|</em>
+                <span> 小虎侦探</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="box2">
+        <h1>WHAT'S NEWS</h1>
+    </div>
+
+    <div class="jumbotron hugescreen box3">
+        <p>...</p>
+    </div>
+
+    <div class="box2">
+        <h1>OUR BLOG</h1>
+    </div>
+
+    <div class="jumbotron hugescreen box3">
+        <p>...</p>
+    </div>
+
+
+    <div class="comment">
+        <textarea name="" id="commentarea" cols="150" rows="10">123</textarea>
+        <button class="careabtn">发布</button>
+        <ul class='careaul'>
+            <li class='careali'>123</li>
+        </ul>
+    </div>
+
+
+    <script>
+        // 1. 获取元素
+        var btn = document.querySelector('.careabtn');
+        var text = document.querySelector('#commentarea');
+        // 2. 注册事件
+        btn.onclick = function () {
+            var ul = document.querySelector('.careaul');
+            var li = ul.children;
+            var a = ul.children[li.length - 1].innerHTML;
+            var b = text.value;
+            if (text.value == '') {
+                alert('您没有输入内容');
+                return false;
+            } else if (a == b) {
+                alert("拒绝重复发布");
+            } else {
+                // (1) 创建元素
+                var li = document.createElement('li');
+                // 先有 li 才能赋值
+                li.innerHTML = text.value;
+                // (2) 添加元素
+                ul.appendChild(li); /* 后面 */
+                ul.insertBefore(li, ul.children[0]);
+            }
+        }
+    </script>
+
+    <div id="footer">
+        <ul>
+            <li><a href="#">公司简介</a></li>
+            <li><a href="#">发展历程</a></li>
+            <li><a href="#">科技研发</a></li>
+            <li><a href="#">集团介绍</a></li>
+            <li><a href="#">奋斗目标</a></li>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>
